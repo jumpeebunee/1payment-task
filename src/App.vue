@@ -6,10 +6,12 @@
           <SortContent 
             @updateQuery="changeQuery"
             @updateValue="changeValue"
+            @updateFilter="changeFilter"
+            :brands="brands"
             :value="value"
           />
           <TableComponent
-            :items="filteredAndRanged"
+            :items="filteredRangedItems"
             :fields="fields"
           />
         </div>
@@ -35,6 +37,8 @@ export default {
       items: data,
       searchQuery: '',
       value: [2000, 3000],
+      brands: [],
+      filter: 'All',
     }
   },
   components: {TableComponent, SortContent},
@@ -44,6 +48,9 @@ export default {
     },
     changeQuery(val) {
       this.searchQuery = val;
+    },
+    changeFilter(val) {
+      this.filter = val;
     }
   },
   computed: {
@@ -63,15 +70,31 @@ export default {
       return filtered;
     },
     filteredAndRanged() {
-      let filteredAndranged = this.filteredItems.filter(item => item.age > this.value[0] && item.age < this.value[1]);
+      let filteredAndranged = this.filteredItems.filter(item => item.age >= this.value[0] && item.age <= this.value[1]);
       return filteredAndranged;
+    },
+    filteredRangedItems() {
+      if (this.filter === 'All') {
+        return this.filteredAndRanged;
+      } else {
+        return this.filteredAndRanged.filter(item => item.brand === this.filter);
+      }
     }
   },
   mounted() {
-    const years = data.map(item => item.age);
+    const carBrands = new Set();
+    const years = []; 
+
+    data.map(item => {
+      years.push(item.age);
+      carBrands.add(item.brand);
+    });
+
     const min = Math.min(...years);
     const max = Math.max(...years);
+
     this.value = [min, max];
+    this.brands = Array.from(carBrands);
   }
 }
 </script>
