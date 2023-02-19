@@ -3,6 +3,10 @@
     <main>
       <section>
         <div class="container">
+          <StatsContent
+            :total="totalCars"
+            :finded="filteredRangedItems.length"
+          />
           <SortContent 
             @updateQuery="changeQuery"
             @updateValue="changeValue"
@@ -24,6 +28,7 @@
 import { data } from './data/data';
 import TableComponent from './components/TableComponent';
 import SortContent from './components/SortContent';
+import StatsContent from './components/StatsContent';
 
 export default {
   name: 'App',
@@ -38,10 +43,11 @@ export default {
       searchQuery: '',
       value: [2010, new Date().getFullYear()],
       brands: [],
+      totalCars: 0,
       filter: 'All',
     }
   },
-  components: {TableComponent, SortContent},
+  components: {TableComponent, SortContent, StatsContent},
   methods: {
     changeValue(val) {
       this.value = val;
@@ -88,12 +94,18 @@ export default {
       carBrands.add(item.brand);
     });
 
+    this.totalCars = data.length;
     this.brands = Array.from(carBrands);
   }
 }
 </script>
 
 <style>
+
+  body::-webkit-scrollbar {
+    width: 0; 
+  }
+  
   #app {
     padding: 30px 0px;
     background-color: #F9FBFC;
