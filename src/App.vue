@@ -3,17 +3,10 @@
     <main>
       <section>
         <div class="container">
-          <div class="app__content">
-            <b-table 
-              head-variant="dark"
-              hover 
-              :items="items"
-              :fields="fields"
-              :sort-by.sync="sortBy"
-              :sort-desc.sync="sortOrder"
-            >
-            </b-table>
-          </div>
+          <TableComponent
+            :items="items"
+            :fields="fields"
+          />
         </div>
       </section>
     </main>
@@ -22,12 +15,12 @@
 
 <script>
 import { data } from './data/data';
+import TableComponent from './components/TableComponent';
+
 export default {
   name: 'App',
   data() {
     return {
-      sortBy: '',
-      sortOrder: false,
       fields: [
         { key: 'id', sortable: true },
         { key: 'brand', sortable: true },
@@ -36,17 +29,8 @@ export default {
       items: data,
     }
   },
-  computed: {
-    sort() {
-      if (this.sortBy) {
-        const url = `https://localhost:3005/cars/index?sort=${this.sortBy}-${this.sortOrder ? 'ASD' : 'DESC'}`;
-        return console.log(url);
-      } else {
-        return '';
-      }
+  components: {TableComponent,},
 
-    }
-  }
 }
 </script>
 
