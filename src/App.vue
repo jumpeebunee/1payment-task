@@ -36,7 +36,7 @@ export default {
       ],
       items: data,
       searchQuery: '',
-      value: [2000, 3000],
+      value: [2010, new Date().getFullYear()],
       brands: [],
       filter: 'All',
     }
@@ -82,18 +82,12 @@ export default {
     }
   },
   mounted() {
-    const carBrands = new Set();
-    const years = []; 
+    const carBrands = new Set(); 
 
     data.map(item => {
-      years.push(item.age);
       carBrands.add(item.brand);
     });
 
-    const min = Math.min(...years);
-    const max = Math.max(...years);
-
-    this.value = [min, max];
     this.brands = Array.from(carBrands);
   }
 }

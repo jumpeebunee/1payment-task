@@ -1,6 +1,8 @@
 <template>
   <div class="app__content app-table__content">
+    <b-alert v-if="items.length === 0" variant="danger" show>There are no suitable cars</b-alert>
     <b-table 
+      v-else
       head-variant="dark"
       hover 
       :items="items"

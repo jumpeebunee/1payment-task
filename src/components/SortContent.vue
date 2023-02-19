@@ -19,7 +19,7 @@
       class="app__content-range"
       @change="changeRange"
       showTooltip="focus"
-      :min="2000"
+      :min="2010"
       :max="new Date().getFullYear()" 
       :value="value" 
     />
