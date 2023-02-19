@@ -9,7 +9,7 @@
         </b-form-input>
       </b-col>
     </b-row>
-    <Slider class="app__content-range" @change="changeRange" showTooltip="focus" :min="2010" :max="2023" :value="value" />
+    <Slider class="app__content-range" @change="changeRange" showTooltip="focus" :min="2000" :max="new Date().getFullYear()" :value="value" />
   </div>
 </template>
 

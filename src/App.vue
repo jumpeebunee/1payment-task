@@ -3,7 +3,11 @@
     <main>
       <section>
         <div class="container">
-          <SortContent @updateQuery="changeQuery" @updateValue="changeValue" :value="value"/>
+          <SortContent 
+            @updateQuery="changeQuery"
+            @updateValue="changeValue"
+            :value="value"
+          />
           <TableComponent
             :items="filteredAndRanged"
             :fields="fields"
@@ -30,7 +34,7 @@ export default {
       ],
       items: data,
       searchQuery: '',
-      value: [2010, 2023],
+      value: [2000, 3000],
     }
   },
   components: {TableComponent, SortContent},
@@ -63,6 +67,12 @@ export default {
       return filteredAndranged;
     }
   },
+  mounted() {
+    const years = data.map(item => item.age);
+    const min = Math.min(...years);
+    const max = Math.max(...years);
+    this.value = [min, max];
+  }
 }
 </script>
 
