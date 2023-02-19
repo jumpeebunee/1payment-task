@@ -1,0 +1,33 @@
+<template>
+  <div class="app__content app-sort__content">
+    <b-row>
+      <b-col sm="4">
+        <b-form-input 
+          :value="searchQuery"
+          @input="changeQuery"
+          placeholder="Search">
+        </b-form-input>
+      </b-col>
+    </b-row>
+    <Slider class="app__content-range" @change="changeRange" showTooltip="focus" :min="2010" :max="2023" :value="value" />
+  </div>
+</template>
+
+<script>
+import Slider from '@vueform/slider/dist/slider.vue2.js'
+ export default {
+  components: { Slider },
+  props: ['value', 'searchQuery'],
+  methods: {
+    changeRange(val) {
+      this.$emit('updateValue', val);
+    },
+    changeQuery(val) {
+      this.$emit('updateQuery', val);
+    }
+  }
+ }
+</script>
+
+<style scoped>
+</style>

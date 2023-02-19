@@ -1,5 +1,5 @@
 <template>
-  <div class="app__content">
+  <div class="app__content app-table__content">
     <b-table 
       head-variant="dark"
       hover 
@@ -35,4 +35,9 @@
 </script>
 
 <style scoped>
+
+.app-table__content {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
 </style>
