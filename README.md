@@ -3,9 +3,9 @@
 ## About Project
 Для проекта были использованы vue и bootstrap 5. В рамках проекта я создал отдельную папку для данных авто, позволяющую сортировать и фильтровать данные. Пользователи могут фильтровать по марке автомобиля и сортировать по времени выпуска автомобиля, используя интервал от и до. Каждый раз, когда сортировка изменяется, активируется метод, который отправляет данные в серверную часть и регистрирует результаты с помощью console.log(). Проект также включает статистику по всем автомобилям и любым автомобилям, которые были найдены в процессе фильтрации. Если данные не были найдены, то  будет показана ошибка в UI.
 ## Main
-![image](https://user-images.githubusercontent.com/105386597/220067957-d2b76478-3523-4af3-a71b-4fb16d3d656c.png)
+![image](https://user-images.githubusercontent.com/105386597/220075910-1d3eaadb-7516-4c04-863d-898b1f65ba6f.png)
 ## Filtered items
-![image](https://user-images.githubusercontent.com/105386597/220068057-d20f1ff8-5bff-47e0-b61a-186f8d272f92.png)
+![image](https://user-images.githubusercontent.com/105386597/220075831-e59523ba-47c6-4a24-887c-c5c5fb0a6755.png)
 ## Error items
-![image](https://user-images.githubusercontent.com/105386597/220068136-f8f83cb9-b1c4-414e-bb52-33c2d9739872.png)
+![image](https://user-images.githubusercontent.com/105386597/220075956-36bb3c9a-9606-473e-9204-d0f9ff773cac.png)
 
