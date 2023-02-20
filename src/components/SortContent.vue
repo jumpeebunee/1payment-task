@@ -1,7 +1,7 @@
 <template>
   <div class="app__content app-sort__content">
-    <b-row>
-      <b-col sm="4">
+    <b-row class="app__sort__search">
+      <b-col sm="6">
         <b-form-input 
           :value="searchQuery"
           @input="changeQuery"
@@ -46,4 +46,10 @@ import Slider from '@vueform/slider/dist/slider.vue2.js'
 </script>
 
 <style scoped>
+
+  @media(max-width: 576px) {
+    .app__sort__search {
+      gap: 10px;
+    }
+  }
 </style>
