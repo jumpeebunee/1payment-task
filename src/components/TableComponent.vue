@@ -7,8 +7,7 @@
       hover 
       :items="items"
       :fields="fields"
-      :sort-by.sync="sortBy"
-      :sort-desc.sync="sortOrder"
+      @sort-changed="sort"
     >
     </b-table>
   </div>
@@ -23,14 +22,10 @@
       }
     },
     props: ['fields', 'items'],
-    computed: {
-      sort() {
-        if (this.sortBy) {
-          const url = `https://localhost:3005/cars/index?sort=${this.sortBy}-${this.sortOrder ? 'ASD' : 'DESC'}`;
-          return console.log(url);
-        } else {
-          return '';
-        }
+    methods: {
+      sort(val) {
+        const url = `https://localhost:3005/cars/index?sort=${val.sortBy}-${val.sortDesc ? 'DESC' : 'ASC'}`;
+        console.log(url);
       }
     }
   }
