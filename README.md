@@ -1,24 +1,11 @@
-# 1payment-task
+# 1PaymentTask
+[Live Demo](https://1payment-task.netlify.app/). Table Sort
+## About Project
+Для проекта были использованы vue и bootstrap 5. В рамках проекта я создал отдельную папку для данных авто, позволяющую сортировать и фильтровать данные. Пользователи могут фильтровать по марке автомобиля и сортировать по времени выпуска автомобиля, используя интервал от и до. Каждый раз, когда сортировка изменяется, активируется метод, который отправляет данные в серверную часть и регистрирует результаты с помощью console.log(). Проект также включает статистику по всем автомобилям и любым автомобилям, которые были найдены в процессе фильтрации. Если данные не были найдены, то  будет показана ошибка в UI.
+## Main
+![image](https://user-images.githubusercontent.com/105386597/220067957-d2b76478-3523-4af3-a71b-4fb16d3d656c.png)
+## Filtered items
+![image](https://user-images.githubusercontent.com/105386597/220068057-d20f1ff8-5bff-47e0-b61a-186f8d272f92.png)
+## Error items
+![image](https://user-images.githubusercontent.com/105386597/220068136-f8f83cb9-b1c4-414e-bb52-33c2d9739872.png)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
