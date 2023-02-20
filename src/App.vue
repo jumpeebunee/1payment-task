@@ -109,6 +109,7 @@ export default {
   #app {
     padding: 30px 0px;
     background-color: #F9FBFC;
+    min-height: 100vh;
   }
   .app__content {
     padding: 20px;
